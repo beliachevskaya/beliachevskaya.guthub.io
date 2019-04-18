@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ToDo</title>
+    <style>
+    body {
+            background-color: #FFFDD0;
+        }
+        #unfinishedList li, #completedList li {
+            background-color: #CADABA;
+            border: none;
+        }
+        #unfinishedList div, #completedList div {
+            background-color: #CADABA;
+            border: solid #CADABA 1px;
+            margin-bottom: 1em;
+            border-radius: .5em;
+            padding: .3em .3em .3em .3em;
+            box-shadow: 2px 4px 8px rgba(0,0,0,.5);
+            transition-duration: .6s;
+        }
+        .todoList:hover {
+            transform: scale(1.01);
+            -webkit-transform: scale(1.02);
+            -ms-transform: scale(1.02);  
+        }
+        .todoList {
+            word-break: break-all; 
+            animation-name: fadeIn;
+            animation-duration: 1.5s;         
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        #todoMenu, #completedMenu {
+            margin-top: .5em;
+            margin-bottom: .5em;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        #todo {
+            flex: 2;    
+        }
+        #priorityButton {
+            flex: 1;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <nav class="navbar navbar-expand text-light bg-secondary">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <p class="font-weight-bold navbar-nav mr-sm-2">ToDo</p>
+                  <div class="themesButton mr-auto"></div>
+                  <form class="form-inline my-1 my-lg-2" id="form1">
+                      <input class="form-control mr-sm-2" placeholder="Add To Do" aria-label="Add To Do" id="addToDo">     
+                      <select class="custom-select mr-sm-2" id='priority'>
+                          <option selected>Priority</option>
+                          <option value="no">no</option>
+                          <option value="hight">High</option>
+                          <option value="medium">Medium</option>
+                          <option value="low">Low</option>
+                      </select>            
+                      <button class="btn btn-dark my-2 my-sm-0" type="button" id="addButton">Add</button>
+                  </form>
+              </div>
+          </nav>
+    
+          <div class="row">  
+              <div class="col-lg-6">
+                  <div id="todoMenu">
+                      <div id='todo'><p class="font-weight-bold ml-2">ToDo</p></div> 
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" id="priorityButton">
+                          <button type="button" class="btn btn-secondary" id='low'>low</button>
+                          <button type="button" class="btn btn-secondary" id='medium'>medium</button>
+                          <button type="button" class="btn btn-secondary" id='hight'>hight</button>
+                          <button type="button" class="btn btn-secondary" id='all'> all  </button>
+                      </div>
+                  </div>
+                  <div class='container'>
+                      <div class='row'>
+                          <ul class="list-group col-12" id="unfinishedList">
+                          </ul>
+                      </div>
+                  </div>
+              </div>             
+  
+              <div class="col-lg-6">
+                  <div id='completedMenu'>
+                      <p class="font-weight-bold ml-2" >Completed</p>
+                  </div>    
+                  <div class='container'>
+                      <div class='row'>
+                          <ul class="list-group col-12" id="completedList">
+                          </ul>
+                      </div> 
+                  </div>   
+              </div>                                                   
+          </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='index.js'></script>
+  </body>
+</html>
